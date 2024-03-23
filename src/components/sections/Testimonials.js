@@ -4,7 +4,7 @@ const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/userData')
+    fetch('https://the-portfolyo-iota.vercel.app/api/userData')
       .then(response => response.json())
       .then(data => {
         // Take the first 3 testimonials
