@@ -5,6 +5,7 @@ const Home = () => {
 
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
+  const [subTitle, setSubTitle] = useState('');
 
   useEffect(() => {
     fetch('https://the-portfolyo-iota.vercel.app/api/userData')
@@ -12,6 +13,7 @@ const Home = () => {
     .then(data => {
       setUserName(data.about.name);
       setEmail(data.email);
+      setSubTitle(data.about.subTitle);
     })
     .catch(error => {
       console.error('Error fetching user name:', error)
@@ -31,7 +33,7 @@ const Home = () => {
             <span className="position-relative">
               <span className="animated-layer">I am</span>
               <span className="intro animated-layer">
-                Front-end Developer with 7 years experience based in London
+                {subTitle}
               </span>
             </span>
             <span>
