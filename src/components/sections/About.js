@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 const About = () => {
   const [userName, setUserName] = useState('');
+  const [subTitle, setSubTitle] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -17,6 +18,7 @@ const About = () => {
       .then(response => response.json())
       .then(data => {
         setUserName(data.about.name);
+        setSubTitle(data.about.subTitle);
         setEmail(data.email);
         setProfileImage(data.about.avatar.url);
         setPhoneNumber(data.about.phoneNumber);
